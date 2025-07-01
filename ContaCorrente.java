@@ -2,7 +2,7 @@ public class ContaCorrente extends Conta {
 
 
     public ContaCorrente(int conta, Cliente cliente) {
-        super();
+        super(conta, cliente);
     }
 
     @Override

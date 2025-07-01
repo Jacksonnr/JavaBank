@@ -4,25 +4,19 @@ public class Cliente {
 
     private String nome;
     private String cpf;
-    private byte diaNascimento;
-    private byte mesNascimento;
-    private byte anoNascimento;
-    private ArrayList<Conta> contas;
+    private String senha;
+    private ArrayList<Conta> contas = new ArrayList<>();
 
-    public Cliente (String nome, String cpf, byte diaNascimento, byte mesNascimento, byte anoNascimento){
+
+    public Cliente (String nome, String cpf, String senha){
         this.nome = nome;
         this.cpf = cpf;
-        this.diaNascimento = diaNascimento;
-        this.mesNascimento = mesNascimento;
-        this.anoNascimento = anoNascimento;
+        this.senha = senha;
+        this.contas = new ArrayList<>();
     }
 
-    public byte getAnoNascimento() {
-        return anoNascimento;
-    }
-
-    public void setAnoNascimento(byte anoNascimento) {
-        this.anoNascimento = anoNascimento;
+    public Conta adicionarConta(Conta conta){
+        return conta;
     }
 
     public String getNome() {
@@ -39,22 +33,6 @@ public class Cliente {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public byte getDiaNascimento() {
-        return diaNascimento;
-    }
-
-    public void setDiaNascimento(byte diaNascimento) {
-        this.diaNascimento = diaNascimento;
-    }
-
-    public byte getMesNascimento() {
-        return mesNascimento;
-    }
-
-    public void setMesNascimento(byte mesNascimento) {
-        this.mesNascimento = mesNascimento;
     }
 
     public ArrayList<Conta> getContas() {

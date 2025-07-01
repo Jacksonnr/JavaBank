@@ -5,20 +5,21 @@ public class Banco {
     private ArrayList<Conta> contas = new ArrayList<>();
     private int proximoNumeroConta = 1001;
 
-    public Cliente criarCliente(String nome, String cpf, byte diaNascimento, byte mesNascimento, byte anoNascimento) {
-        Cliente cliente = new Cliente(nome, cpf, diaNascimento, mesNascimento, anoNascimento);
+    public Cliente criarCliente(String nome, String cpf, String senha) {
+        Cliente cliente = new Cliente(nome, cpf, senha);
         clientes.add(cliente);
         return cliente;
     }
 
     public Conta criarConta(Cliente cliente, String tipo) {
-        Conta conta;
+        Conta conta = null;
         if (tipo.equals("corrente")) {
             conta = new ContaCorrente(proximoNumeroConta++, cliente);
         } else if (tipo.equals("poupança")) {
             conta = new ContaPoupanca(proximoNumeroConta++, cliente);
         } else {
             System.out.println("Favor informar um tipo válido de conta. ");
+            return null;
         }
         contas.add(conta);
         cliente.adicionarConta(conta);
